@@ -9,11 +9,11 @@ class CategoriaSerializer(serializers.ModelSerializer):
 
 
 class LivrosSerializer(serializers.ModelSerializer):
-    #disponivel = serializers.ReadOnlyField()
+    disponivel = serializers.ReadOnlyField()
     categoria = CategoriaSerializer()
 
     class Meta:
         model = Livro
-        fields = ['nome', 'categoria', 'autor']
+        fields = ['nome', 'categoria', 'autor', 'disponivel']
 
 
